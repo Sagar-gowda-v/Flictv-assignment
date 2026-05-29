@@ -5,13 +5,13 @@ import '../../../../core/constants/app_colors.dart';
 class FeatureTile extends StatelessWidget {
   const FeatureTile({
     super.key,
-    required this.icon,
+    required this.iconAsset,
     required this.title,
     required this.subtitle,
     required this.scale,
   });
 
-  final IconData icon;
+  final String iconAsset;
   final String title;
   final String subtitle;
   final double scale;
@@ -37,7 +37,16 @@ class FeatureTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(10 * scale),
               color: AppColors.featureIconBackground,
             ),
-            child: Icon(icon, color: const Color(0xFFF4D86E), size: 20 * scale),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10 * scale),
+              child: Image.asset(
+                iconAsset,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.contain,
+                filterQuality: FilterQuality.high,
+              ),
+            ),
           ),
           SizedBox(width: 10 * scale),
           Expanded(

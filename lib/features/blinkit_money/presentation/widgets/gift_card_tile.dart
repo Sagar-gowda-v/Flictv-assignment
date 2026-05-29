@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class GiftCardTile extends StatelessWidget {
@@ -20,13 +21,21 @@ class GiftCardTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
-            radius: 18 * scale,
-            backgroundColor: AppColors.giftIconBackground,
-            child: Icon(
-              Icons.card_giftcard,
-              color: AppColors.giftIcon,
-              size: 20 * scale,
+          Container(
+            width: 36 * scale,
+            height: 36 * scale,
+            decoration: const BoxDecoration(
+              color: AppColors.giftIconBackground,
+              shape: BoxShape.circle,
+            ),
+            child: ClipOval(
+              child: Image.asset(
+                AppAssets.iconGiftCard,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.contain,
+                filterQuality: FilterQuality.high,
+              ),
             ),
           ),
           SizedBox(width: 12 * scale),

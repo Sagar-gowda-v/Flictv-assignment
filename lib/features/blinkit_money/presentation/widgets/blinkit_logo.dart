@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/app_assets.dart';
+
 class BlinkitLogo extends StatelessWidget {
   const BlinkitLogo({super.key, required this.size});
 
@@ -13,7 +15,7 @@ class BlinkitLogo extends StatelessWidget {
       child: Transform.scale(
         scale: 4,
         alignment: Alignment.center,
-        child: Image.asset('assets/images/blinkit_logo.png', fit: BoxFit.contain),
+        child: Image.asset(AppAssets.blinkitLogo, fit: BoxFit.contain),
       ),
     );
   }

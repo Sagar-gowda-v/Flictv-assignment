@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
-
 class FeatureItem {
   const FeatureItem({
-    required this.icon,
+    required this.iconAsset,
     required this.title,
     required this.subtitle,
   });
 
-  final IconData icon;
+  final String iconAsset;
   final String title;
   final String subtitle;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/responsive_scale.dart';
 import '../../domain/models/feature_item.dart';
@@ -24,17 +25,17 @@ class _BlinkitMoneyScreenState extends State<BlinkitMoneyScreen>
 
   static const List<FeatureItem> _featureItems = [
     FeatureItem(
-      icon: Icons.touch_app_rounded,
+      iconAsset: AppAssets.iconSingleTap,
       title: 'Single tap payments',
       subtitle: 'Enjoy seamless payments without the wait for OTPs',
     ),
     FeatureItem(
-      icon: Icons.wifi_tethering_rounded,
+      iconAsset: AppAssets.iconZeroFailures,
       title: 'Zero failures',
       subtitle: 'Zero payment failures ensure you never miss an order',
     ),
     FeatureItem(
-      icon: Icons.flash_on_rounded,
+      iconAsset: AppAssets.iconRealtimeRefunds,
       title: 'Real-time refunds',
       subtitle:
           'No need to wait for refunds. Blinkit Money refunds are instant!',
@@ -198,7 +199,7 @@ class _BlinkitMoneyScreenState extends State<BlinkitMoneyScreen>
             _staggered(
               index: i,
               child: FeatureTile(
-                icon: _featureItems[i].icon,
+                iconAsset: _featureItems[i].iconAsset,
                 title: _featureItems[i].title,
                 subtitle: _featureItems[i].subtitle,
                 scale: uiScale,
